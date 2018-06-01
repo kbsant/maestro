@@ -1,2 +1,2 @@
 # maestro
-Symphony calendar application
+Symphony application
