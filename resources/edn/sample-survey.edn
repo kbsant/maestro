@@ -1,0 +1,166 @@
+{:current-skip false,
+ :description "A survey to help improve online survey tools.",
+ :surveyname "Sample Survey",
+ :roles nil,
+ :question-map
+ {"9"
+  {:question-text
+   "A survey application should manage and deliver emails.",
+   :answer-type "Rating (5 levels)",
+   :allow-na false,
+   :skip true,
+   :required false,
+   :index "9"},
+  "3"
+  {:question-text
+   "On which devices are respondents likely to fill out surveys?",
+   :answer-type "Devices",
+   :allow-na false,
+   :required false,
+   :index "3"},
+  "4"
+  {:question-text
+   "Which devices are used when designing surveys and collecting survey results?",
+   :answer-type "Devices",
+   :allow-na false,
+   :required false,
+   :index "4",
+   :skip false},
+  "8"
+  {:question-text
+   "Which features are important for a survey application? (1 - least important 5 - most important)",
+   :answer-type "Static text/comment",
+   :allow-na false,
+   :skip false,
+   :required false,
+   :index "8"},
+  "7"
+  {:question-text "Survey application features",
+   :answer-type "Static text/comment",
+   :allow-na false,
+   :skip true,
+   :required false,
+   :index "7"},
+  "5"
+  {:question-text
+   "For web-based surveys, which web browsers are respondents likely to use?",
+   :answer-type "Browsers",
+   :allow-na false,
+   :required false,
+   :index "5"},
+  "6"
+  {:question-text
+   "If there are any other platforms used for filling out surveys, please enter them below.",
+   :answer-type "Free text",
+   :allow-na false,
+   :required false,
+   :index "6"},
+  "1"
+  {:question-text
+   "When conducting surveys, it is ok to host both the collected data on the cloud?",
+   :answer-type "Disagree ... Agree (5 levels)",
+   :allow-na false,
+   :required false,
+   :index "1",
+   :skip false},
+  "11"
+  {:question-text
+   "When showing results, the survey app should be able to present a variety of graphs.",
+   :answer-type "Rating (5 levels)",
+   :allow-na false,
+   :skip true,
+   :required false,
+   :index "11"},
+  "2"
+  {:question-text "Which applications do you use to conduct surveys?",
+   :answer-type "Survey apps",
+   :allow-na false,
+   :required true,
+   :index "2",
+   :skip false},
+  "10"
+  {:question-text "Images are needed as part of the questionnaire.",
+   :answer-type "Rating (5 levels)",
+   :allow-na false,
+   :skip true,
+   :required false,
+   :index "10"},
+  :new-question
+  {:question-text "",
+   :answer-type "Yes / No",
+   :required false,
+   :allow-na false,
+   :index :new-question}},
+ :question-list ["1" "2" "4" "3" "5" "7" "8" "9" "10" "11" "6"],
+ :question-edit-mode false,
+ :surveyno #uuid "48b03cd7-247f-47f1-b931-5cf22b510741",
+ :answer-types
+ {"Yes / No"
+  {:option-text "Yes / No",
+   :index 0,
+   :predefined true,
+   :template :radio,
+   :params {:values ["Yes" "No"]}},
+  "Disagree ... Agree (5 levels)"
+  {:option-text "Disagree ... Agree (5 levels)",
+   :index 1,
+   :predefined true,
+   :template :radio,
+   :params
+   {:values
+    ["Strongly disagree"
+     "Disagree"
+     "Neither agree nor disagree"
+     "Agree"
+     "Strongly agree"]}},
+  "Rating (5 levels)"
+  {:option-text "Rating (5 levels)",
+   :index 2,
+   :predefined true,
+   :template :radio,
+   :params {:values ["1" "2" "3" "4" "5"]}},
+  "Free text"
+  {:option-text "Free text",
+   :index 3,
+   :predefined true,
+   :template :text-area},
+  "Survey apps"
+  {:option-text "Survey apps",
+   :index 3,
+   :custom-index "Survey apps",
+   :custom-template "Multiple selection",
+   :template :checkbox,
+   :param-type :text,
+   :params
+   {:values
+    ["Web browser"
+     "Email-based"
+     "Shared document (Spreadsheet, etc.)"
+     "Installed application"]}},
+  "Devices"
+  {:option-text "Devices",
+   :index 3,
+   :custom-index "Devices",
+   :custom-template "Multiple selection",
+   :template :checkbox,
+   :param-type :text,
+   :params {:values ["Desktop/Notebook" "Tablet" "Phone"]}},
+  "Browsers"
+  {:option-text "Browsers",
+   :index 3,
+   :custom-index "Browsers",
+   :custom-template "Multiple selection",
+   :template :checkbox,
+   :param-type :text,
+   :params
+   {:values
+    ["IE 11 or below "
+     "IE 12 and up (Windows 10)"
+     "Chrome"
+     "Firefox"
+     "Safari"]}},
+  "Static text/comment"
+  {:option-text "Static text/comment",
+   :index 4,
+   :predefined true,
+   :template :static}}}

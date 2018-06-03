@@ -1,0 +1,139 @@
+html,
+body {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    height: 100%;
+}
+.navbar {
+  margin-bottom: 10px;
+  border-radius: 0px;
+  background: linear-gradient(to bottom right, teal, cyan);
+  color: white;
+}
+.navbar a, .navbar a:hover, .navbar a:visited {
+  color: white;
+}
+.navbar-brand {
+  float: none;
+}
+.navbar-nav .nav-item {
+  float: none;
+}
+.navbar-divider,
+.navbar-nav .nav-item+.nav-item,
+.navbar-nav .nav-link + .nav-link {
+  margin-left: 0;
+}
+@media (min-width: 34em) {
+  .navbar-brand {
+    float: left;
+  }
+  .navbar-nav .nav-item {
+    float: left;
+  }
+  .navbar-divider,
+  .navbar-nav .nav-item+.nav-item,
+  .navbar-nav .nav-link + .nav-link {
+    margin-left: 1rem;
+  }
+}
+
+@-moz-keyframes three-quarters-loader {
+    0% {
+        -moz-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -moz-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes three-quarters-loader {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes three-quarters-loader {
+    0% {
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.trash-area {
+  background-color: lightgray;
+}
+
+.main-tile a {
+  text-align: center;
+}
+.main-tile a img {
+  width: 64px;
+  height: 64px;
+  clear: none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.main-tile a p {
+  text-align: center;
+}
+.toolbar-tile a {
+  text-align: center;
+}
+.toolbar-tile button {
+  background: none;
+  border: none;
+  color: gray;
+}
+.toolbar-tile button:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.toolbar-tile button img, .toolbar-tile a img {
+  width: 32px;
+  height: 32px;
+  clear: none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.toolbar-tile a p {
+  text-align: center;
+}
+
+table.doclist {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.doclist tbody tr td {
+  max-width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.wide-cell {
+  width: 60%;
+}
+
+.narrow-cell {
+  min-width: 5%;
+  max-width: 10%;
+  width: 10%;
+}
