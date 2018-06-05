@@ -3,7 +3,9 @@
             [luminus.repl-server :as repl]
             [luminus.http-server :as http]
             [maestro.config :refer [env]]
-            [maestro.survey :as survey]
+            [maestro.speech :as speech]
+            [maestro.symphbot :as symphbot]
+            [maestro.audio :as audio]
             [clojure.tools.cli :refer [parse-opts]]
             [clojure.tools.logging :as log]
             [mount.core :as mount])

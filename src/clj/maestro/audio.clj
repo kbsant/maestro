@@ -1,23 +1,33 @@
 (ns maestro.audio
-  (:import '(javax.sound.sampled AudioFormat AudioSystem DataLine DataLine$Info TargetDataLine)))
+  (:require
+    [mount.core :refer [defstate]])
+  (:import (javax.sound.sampled AudioFormat AudioSystem DataLine DataLine$Info TargetDataLine)))
  
-(def af1 (AudioFormat. 8000.0 16 1 false false)
+(def audio-format-16le (AudioFormat. 16000.0 16 1 true false))
 
-(def target-mic (AudioSystem/getTargetDataLine af1))
-(.start target-mic) 
-(def bbc (byte-array 2048))
-(.read target-mic bbc 0 1024)
-(map int bbc)
-(doto target-mic .stop .close)
+;; read the mic
+(def buf256k (byte-array (* 256 1024)))
 
-(def bb (byte-array (* 1024 16)))
+(defn get-target[]
+  (AudioSystem/getTargetDataLine audio-format-16le))
 
-(def ssss (javax.sound.sampled.DataLine$Info. TargetDataLine af1)) 
-(AudioSystem/isLineSupported ssss)
-(.open llline af1 1024)
-(.start llline)
-(.read llline  bb 0 1024)
-(map int bb)
-(.stop llline)
-(.close llline)
-(.isOpen llline)
+(defn open-target [target-mic]
+  (doto target-mic .open .start))
+
+(defn close-target [target-mic]
+  (doto target-mic .stop .close))
+
+(defn target-open? [target-mic]
+  (.isOpen target-mic))
+
+(defstate target-mic
+  :start (open-target (get-target))
+  :stop (close-target target-mic))
+
+(defn read-target
+  ([buf]
+   (read-target target-mic buf))
+  ([target-mic buf]
+   (.read target-mic buf 0 (count buf))))
+
+
