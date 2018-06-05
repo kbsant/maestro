@@ -3,10 +3,8 @@
     [mount.core :refer [defstate]])
   (:import (javax.sound.sampled AudioFormat AudioSystem DataLine DataLine$Info TargetDataLine)))
  
+;; important - little endian (see last param: big endian false) is needed for wav compatibility
 (def audio-format-16le (AudioFormat. 16000.0 16 1 true false))
-
-;; read the mic
-(def buf256k (byte-array (* 256 1024)))
 
 (defn get-target[]
   (AudioSystem/getTargetDataLine audio-format-16le))
