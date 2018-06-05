@@ -26,12 +26,14 @@
 (defstate speech-client
   :start (SpeechClient/create))
 
+;; TODO language config should be cached in a map
 (defstate audio-cfg-en
   :start (build-audio-cfg "en-US"))
 
 (defstate audio-cfg-jp
   :start (build-audio-cfg "ja-JP"))
 
+;; TODO use cached values from a lang-config map
 (defn recognize-bytes [lang raw-audio]
   (let [audio-cfg (if (= lang "ja-JP") audio-cfg-jp audio-cfg-en)]
     (.recognize speech-client audio-cfg (audio-from-bytes raw-audio))))

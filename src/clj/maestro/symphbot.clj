@@ -21,6 +21,7 @@
   :start (syc/connect (symphony-params))
   :stop (syc/disconnect sy-client))
 
+;; TODO bot control and language switching should be done by the bot/from the web
 (def botstate (atom {:started nil
                      :count 100
                      :lang "en-US"}))
@@ -41,6 +42,8 @@
          streams (room-streams client)]
      (dorun (map #(sym/send-message! client % msg) streams)))))
 
+;; TODO bot control and language switching should be done by the bot/from the web
+;; TODO requesting recognition should be done asynchronously
 (defn transcribe []
   (when (> (get @botstate :count 0) 0)
     (let [buf256k (byte-array (* 256 1024))
@@ -53,10 +56,11 @@
       (swap! botstate update :count dec)
       (recur))))    
 
-
+;; TODO need finer async control -- recognition task should by async
 (defn async-transcribe []
   (async/go (<! (transcribe))))
 
+;; TODO this should  be controlled by the bot/from the web
 (defn set-lang! [lang]
   (swap! botstate assoc :lang lang))
 

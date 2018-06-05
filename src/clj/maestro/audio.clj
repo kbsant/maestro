@@ -18,6 +18,7 @@
 (defn target-open? [target-mic]
   (.isOpen target-mic))
 
+;; TODO mic capture should be done from the browser to make it more accessible
 (defstate target-mic
   :start (open-target (get-target))
   :stop (close-target target-mic))
