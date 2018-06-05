@@ -5,6 +5,8 @@ It uses google cloud for speech to text conversion.
 # Client
 This uses the symphony client for clojure: <https://github.com/symphonyoss/clj-symphony>
 
+![Chat session](./symphony-chat.png)
+
 # Usage
 
 This requires java 8, clojure, leiningen, a google cloud account, and a symphony account.
@@ -20,8 +22,10 @@ This works primarily from the leiningen repl:
 
     lein repl  ;; start the repl
     (start)    ;; start the server
-
-
+    (maestro.symphbot/async-transcribe)  ;; start transcribing!
+    (maestro.symphbot/set-lang! "ja-JP") ;; switch to Japanese
+    (maestro.symphbot/set-lang! "en-US") ;; switch back to English
+    quit       ;; stop the bot and server
 
 
 # Limitations
